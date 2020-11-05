@@ -28,22 +28,29 @@ coeficientes.addEventListener("submit", function (event) {
     valores.push(values[i].value);
   }
   // console.log(valores);
+
   Evaluacion(valores);
 });
 
 function Evaluacion(valores) {
   var flag = false;
   const cero = [];
+  var flagg = new Boolean(false);
   an = findComunDenominadorAn(valores);
   a0 = findComunDenominadorA0(valores);
   console.log(a0, "negatvos");
   //si el dato independiente existeeeee  ************************************************************************
   if (valores[valores.length - 1] != 0) {
-    // encontrarSoluciones(
-    //   findComunDenominadorAn(valores),
-    //   findComunDenominadorA0(valores)
-    // );
-
+    let xzz = grado.value;
+    imprimirValores.innerHTML += `
+     <p> tu ecuacion es:</p>
+    `;
+    for (let i = 0; i < valores.length; i++) {
+      imprimirValores.innerHTML += `
+        ${valores[i]}x^${xzz} +
+     `;
+      xzz--;
+    }
     //arreglo de funciones---encontrar soluciones tendra dos parametros que son las llamadas a funciones que nos regresaran algo,
     // ---findRaices como argumento tendra lo que retorneencontrarsoluciones
     findRaices(
@@ -55,6 +62,9 @@ function Evaluacion(valores) {
     );
   } else {
     console.log("no existe termino independientes");
+    imprimirValores.innerHTML += `
+    <p> x1 = 0</p>
+  `;
     evaluarX(valores);
   }
 
@@ -98,9 +108,7 @@ function evaluarX(valores) {
     newArr.push(valores[aux3]);
     aux3++;
   }
-  imprimirValores.innerHTML += `
-<p> x1 = 0</p>
-  `;
+
   Evaluacion(newArr);
 }
 
