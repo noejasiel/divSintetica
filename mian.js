@@ -54,6 +54,7 @@ function Evaluacion(valores) {
     );
   } else {
     console.log("no existe termino independientes");
+    evaluarX(valores);
   }
 
   for (let i = 0; i <= grado.value; i++) {
@@ -68,6 +69,38 @@ function Evaluacion(valores) {
   } else {
     console.log("hay ceros ", valores);
   }
+}
+//gradoo0[aux2]; para saber que le voy a restar
+function evaluarX(valores) {
+  // console.log(valores, "evaluar XXXXXXXXXXXXXXXXXxxxx");
+  // let gradoo0 = [];
+  // for (let i = valores.length - 1; i >= 0; i--) {
+  //   gradoo0.push(i);
+  // }
+  // console.log(gradoo0, "missss gradoooosss");
+  let i = 0;
+  let aux = 0;
+  let aux2 = 0;
+
+  let size = valores.length;
+  while (valores[i + 1] != null) {
+    size--;
+    if (valores[i] != 0) {
+      aux = valores[i];
+      aux2 = size;
+    }
+    i++;
+  }
+  const newArr = [];
+  let aux3 = 0;
+  for (let i = aux2; i <= valores.length - 1; i++) {
+    newArr.push(valores[aux3]);
+    aux3++;
+  }
+  imprimirValores.innerHTML += `
+<p> x1 = 0</p>
+  `;
+  Evaluacion(newArr);
 }
 
 function findRaices(soluciones, valores) {
