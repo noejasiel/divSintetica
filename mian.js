@@ -15,6 +15,7 @@ const form = document
       nodo.className = "valores";
       coeficientes.insertBefore(nodo, before);
     }
+    before.style.display = "block";
   });
 
 coeficientes.addEventListener("submit", function (event) {

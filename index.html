@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style type="text/css">
+      .submit-enviar {
+        display: none;
+      }
+      body {
+        background-color: tomato;
+      }
+    </style>
   </head>
   <body>
     <form action="" id="form">
@@ -14,12 +22,14 @@
       <button type="submit">enviar</button>
     </form>
 
-    <form class="results" id="coeficientes">
-      <button type="submit" id="submit-enviar">enviar</button>
+    <form class="results" id="coeficientes" class="coeficientes">
+      <button type="submit" id="submit-enviar" class="submit-enviar">
+        enviar
+      </button>
     </form>
 
     <div class="results" id="results">
-      <p>valor</p>
+      <p>Resultados: 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇</p>
     </div>
 
     <script src="./mian.js"></script>
